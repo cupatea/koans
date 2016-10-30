@@ -37,11 +37,9 @@ def score(dice)
   score+=one[dice.count(1)]
   score+=five[dice.count(5)]
 
-
   for a in [2,3,4,6]
     score+=a*100 if dice.count(a)==3
   end
-
   return score
 end
 
