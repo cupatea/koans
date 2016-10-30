@@ -14,13 +14,15 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  case [a,b,c].uniq.count
-    when 1
-      :equilateral
-    when 2
-      :isosceles
-    when 3
-      :scalene
+  arr=[a,b,c].sort
+  if arr[0] <= 0 || arr[2] >= arr[0] + arr[1]
+    raise TriangleError
+  else
+    case arr.uniq.count
+      when 1 then :equilateral
+      when 2 then :isosceles
+      when 3 then :scalene
+    end
   end
 end
 
